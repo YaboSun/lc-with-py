@@ -30,7 +30,8 @@ class Solution:
 
         return ''.join(ret)
 
+
 if __name__ == '__main__':
-    str_list = ["flower","flow","flight"]
+    str_list = ["flower", "flow", "flight"]
     so = Solution()
     print(so.longestCommonPrefix(str_list))
