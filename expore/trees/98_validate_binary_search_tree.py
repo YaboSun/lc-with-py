@@ -47,11 +47,21 @@ class TreeNode:
 #             return False
 #         return self.isValidBST(root.left, min(less, root.val), largerThan) and \
 #                self.isValidBST(root.right, lessThan, max(root.val, more))
-class Solution(object):
-    def isValidBST(self, root, lessThan=float('inf'), largerThan=float('-inf')):
+# class Solution(object):
+#     def isValidBST(self, root, lessThan=float('inf'), largerThan=float('-inf')):
+#         if not root:
+#             return True
+#         if root.val <= largerThan or root.val >= lessThan:
+#             return False
+#         return self.isValidBST(root.left, min(lessThan, root.val), largerThan) and \
+#                self.isValidBST(root.right, lessThan, max(root.val, largerThan))
+
+class Solution:
+    def isValidBST(self, root: TreeNode, less=float('inf'), more=float('-inf')) -> bool:
         if not root:
             return True
-        if root.val <= largerThan or root.val >= lessThan:
+        if root.val >= less or root.val <= more:
             return False
-        return self.isValidBST(root.left, min(lessThan, root.val), largerThan) and \
-               self.isValidBST(root.right, lessThan, max(root.val, largerThan))
+        left = self.isValidBST(root.left, min(root.val, less), more)
+        right = self.isValidBST(root.right, less, max(root.val, more))
+        return left and right
