@@ -17,6 +17,7 @@ class Solution:
     """
     俩俩进行比较，获得当前最大值，保证每次只增加
     """
+
     def maxSubArray(self, nums: List[int]) -> int:
         for i in range(1, len(nums)):
             if nums[i - 1] > 0:
@@ -29,20 +30,20 @@ class Solution:
         :param nums:
         :return:
         """
-        lenth = len(nums)
-        dp = [None]*lenth
-        dp[0] = nums[0]
+        length = len(nums)
+        dp = [nums[0]]
 
-        for i in range(1, lenth):
+        for i in range(1, length):
             if dp[i - 1] > 0:
-                dp[i] = dp[i - 1] + nums[i]
+                dp.append(dp[i - 1] + nums[i])
             else:
-                dp[i] = nums[i]
+                dp.append(nums[i])
 
         ret_max = max(dp)
 
         return ret_max
 
+
 if __name__ == '__main__':
     so = Solution()
-    so.maxSubArray2([2,3,4,-1])
+    so.maxSubArray2([2, 3, 4, -1])
