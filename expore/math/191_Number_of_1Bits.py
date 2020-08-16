@@ -36,7 +36,19 @@ class Solution:
                 count += 1
         return count
 
+    # 使用自带库函数
+    def hammingWeight1(self, n: int) -> int:
+        return bin(n).count("1")
+
+    # 利用位运算，太巧妙了
+    def hammingWeight2(self, n: int) -> int:
+        cnt = 0
+        while n != 0:
+            n = n & (n - 1)
+            cnt += 1
+        return cnt
+
 
 if __name__ == '__main__':
     so = Solution()
-    print(so.hammingWeight(0o00000000000000000000000000001011))
+    print(so.hammingWeight2(0o00000000000000000000000000001011))
