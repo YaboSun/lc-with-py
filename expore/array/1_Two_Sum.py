@@ -36,7 +36,7 @@ return [0, 1].
 # vote最多solution
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list, target: int) -> list:
 
         buffer_diict = {}
         for i in range(len(nums)):
@@ -44,3 +44,8 @@ class Solution:
                 return [buffer_diict[nums[i]], i]
             else:
                 buffer_diict[target - nums[i]] = i
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    solution.twoSum([])
