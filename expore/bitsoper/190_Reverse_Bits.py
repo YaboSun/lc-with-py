@@ -17,7 +17,10 @@ Explanation: The input binary string 11111111111111111111111111111101 represents
 
 
 class Solution:
-    def reverseBits(self, n: int) -> int:
+    def __init__(self):
+        pass
+
+    def reverse_bits(self, n: int) -> int:
         ret = 0
         for i in range(16):
             right_bit = n >> i & 1
