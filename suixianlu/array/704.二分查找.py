@@ -30,8 +30,8 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         start_idx = 0
         end_idx = len(nums) - 1
-        while start_idx <= end_idx:
-            half_idx = int((end_idx - start_idx) / 2) + start_idx
+        while start_idx <= end_idx:  # 终止条件需要注意当left==right，区间[left, right依然有效]
+            half_idx = int((end_idx - start_idx) / 2) + start_idx  # 防止溢出，等同于(left + right) / 2
             if nums[half_idx] < target:
                 start_idx = half_idx + 1
             elif nums[half_idx] > target:
