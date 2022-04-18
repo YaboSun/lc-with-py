@@ -2,7 +2,7 @@
 # encoding: utf-8
 # @Author: franky
 # @Date: 2022/4/11 下午6:38
-from suixianlu.linkedlist import ListNode
+from suixianglu.linkedlist import ListNode
 
 """
 题意：反转一个单链表。

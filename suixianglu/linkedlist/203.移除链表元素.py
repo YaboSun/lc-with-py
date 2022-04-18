@@ -18,7 +18,7 @@
 输入：head = [7,7,7,7], val = 7
 输出：[]
 """
-from suixianlu.linkedlist import ListNode
+from suixianglu.linkedlist import ListNode
 
 
 class Solution:
