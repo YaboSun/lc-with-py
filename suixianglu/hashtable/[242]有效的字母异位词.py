@@ -33,7 +33,7 @@
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
-from collections import Counter
+from collections import Counter, defaultdict
 
 
 class Solution:
@@ -57,7 +57,16 @@ class Solution:
     #
     #     return True
 
+    # def isAnagram(self, s: str, t: str) -> bool:
+    #     return Counter(s) == Counter(t)
     def isAnagram(self, s: str, t: str) -> bool:
-        return Counter(s) == Counter(t)
+        s_dict = defaultdict(int)
+        t_dict = defaultdict(int)
 
+        for c in s:
+            s_dict[c] += 1
+        for c in t:
+            t_dict[c] += 1
+
+        return s_dict == t_dict
 # leetcode submit region end(Prohibit modification and deletion)
