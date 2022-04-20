@@ -38,6 +38,10 @@
 
 
 # leetcode submit region begin(Prohibit modification and deletion)
+import copy
+from typing import List
+
+
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         ret_nums = []
@@ -66,4 +70,29 @@ class Solution:
                 else:
                     right -= 1
         return ret_nums
+
+    # def threeSum(self, nums: List[int]) -> List[List[int]]:
+    #     # 双数和四数都用的hash 这题很容易也陷入hash的思考范围
+    #     # 考虑用回溯来求解
+    #     path = list()
+    #     res = list()
+    #
+    #     def work(index):
+    #         if len(path) > 3:
+    #             return
+    #         if len(path) == 3 and sum(path) == 0:
+    #             res.append(copy.deepcopy(path))
+    #
+    #         for i in range(index, len(nums)):
+    #             path.append(nums[i])
+    #             work(i + 1)
+    #             path.pop(-1)
+    #
+    #     work(0)
+    #     return res
+
+
+if __name__ == '__main__':
+    so = Solution()
+    print(so.threeSum([-1, 0, 1, 2, -1, -4]))
 # leetcode submit region end(Prohibit modification and deletion)
